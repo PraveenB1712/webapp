@@ -52,10 +52,14 @@ pipeline{
                 //sonar.java.source=1.8
  
 //sh "mvn sonar:sonar -Dsonar.login=${env.sonarqube}"
-                 sh 'mvn sonar:sonar \
-                  -Dsonar.projectKey=webapp1 \
-                  -Dsonar.host.url=http://34.125.69.253:9000 \
-                  -Dsonar.login=${env.sonarqube}'
+           //      sh 'mvn sonar:sonar \
+             //     -Dsonar.projectKey=webapp1 \
+               //   -Dsonar.host.url=http://34.125.69.253:9000 \
+                 // -Dsonar.login=${env.}'
+		 
+		   withSonarQubeEnv('sonarqube') {
+                 sh 'mvn clean package sonar:sonar'
+              }
               }
           }
 		  
