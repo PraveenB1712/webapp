@@ -43,7 +43,19 @@ pipeline{
 		  
               steps{
 		  
-                  sh 'mvn package'
+                sonar.projectKey=sampleapp
+               sonar.ProjectName=sampleapp
+               sonar.sources=src/main/java/
+               sonar.java.binaries=target/classes/
+                sonar.language=java
+                sonar.java.source=1.8
+
+
+
+                  mvn sonar:sonar \
+                  -Dsonar.projectKey=sampleapp \
+                  -Dsonar.host.url=http://18.218.176.225:9000 \
+                  -Dsonar.login=admin
               }
           }
 		  
