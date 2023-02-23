@@ -11,7 +11,7 @@ pipeline{
 	    
                steps{
 		 echo 'cloning..'
-                 git 'https://github.com/lerndevops/samplejavaapp'
+                 git 'https://github.com/PraveenB1712/samplejavaapp.git'
               }
           }
           stage('Compile'){
