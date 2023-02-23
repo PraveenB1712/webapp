@@ -42,7 +42,8 @@ pipeline{
           stage('Package'){
 		  
               steps{
-		  
+		       sh 'mvn package'
+		       
                 sonar.projectKey=sampleapp
                sonar.ProjectName=sampleapp
                sonar.sources=src/main/java/
@@ -52,10 +53,10 @@ pipeline{
 
 
 
-                  mvn sonar:sonar \
+                 sh 'mvn sonar:sonar \
                   -Dsonar.projectKey=sampleapp \
                   -Dsonar.host.url=http://18.218.176.225:9000 \
-                  -Dsonar.login=admin
+                  -Dsonar.login=admin'
               }
           }
 		  
