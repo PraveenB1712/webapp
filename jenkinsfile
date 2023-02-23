@@ -58,8 +58,7 @@ pipeline{
                  // -Dsonar.login=${env.}'
 		 
 		   withSonarQubeEnv('sonarqube') {
-                 sh "mvn clean package sonar:sonar
-		     -Dsonar.junit.reportsPath=target/surefire-reports"
+                 sh "mvn clean package sonar:sonar -Dsonar.junit.reportsPath=target/surefire-reports"
 		     
 		 
 		 
