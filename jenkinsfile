@@ -44,12 +44,12 @@ pipeline{
               steps{
 		       sh 'mvn package'
 		       
-                sonar.projectKey=webapp1
-               sonar.ProjectName=webapp1
-               sonar.sources=src/main/java/
-               sonar.java.binaries=target/classes/
-                sonar.language=java
-                sonar.java.source=1.8
+             //   sonar.projectKey=webapp1
+               //sonar.ProjectName=webapp1
+               //sonar.sources=src/main/java/
+               //sonar.java.binaries=target/classes/
+                //sonar.language=java
+                //sonar.java.source=1.8
 
 
 
