@@ -50,13 +50,12 @@ pipeline{
                //sonar.java.binaries=target/classes/
                 //sonar.language=java
                 //sonar.java.source=1.8
-
-
-
+ 
+//sh "mvn sonar:sonar -Dsonar.login=${env.sonarqube}"
                  sh 'mvn sonar:sonar \
                   -Dsonar.projectKey=webapp1 \
                   -Dsonar.host.url=http://34.125.69.253:9000 \
-                  -Dsonar.login=admin'
+                  -Dsonar.login=${env.sonarqube}'
               }
           }
 		  
